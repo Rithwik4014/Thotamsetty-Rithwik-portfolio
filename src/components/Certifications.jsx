@@ -7,7 +7,8 @@ function Certifications() {
       title: "Basics of Data Structures and algorithms",
       date: "Jul '25",
       desc: "Completed a summer training program in Data Structures and Algorithms, focusing on structured problem-solving, complexity analysis, and hands-on implementation of essential algorithms and data structures in C++. Gained exposure to real-world coding challenges and performance optimization.",
-      tech: ["Arrays", "Linked Lists", "Stacks", "Queues", "Recursion", "Sorting & Searching"]
+      tech: ["Arrays", "Linked Lists", "Stacks", "Queues", "Recursion", "Sorting & Searching"],
+      link: "https://drive.google.com/file/d/1I1442AIEVTNX6ya8C0wZNJQHQnSXFZct/view"
     }
   ];
 
@@ -51,7 +52,7 @@ function Certifications() {
         <div className="training-column animate-fade-up">
           <h3 className="skill-cat-title"><BookOpen size={24} className="text-teal" style={{marginRight: '0.75rem', color: 'var(--accent-2)'}}/> Training Programs</h3>
           {training.map((item, idx) => (
-            <div key={idx} className="glass-panel cert-card">
+            <a key={idx} href={item.link} target="_blank" rel="noreferrer" className="glass-panel cert-card" style={{ textDecoration: 'none', display: 'block', color: 'inherit', cursor: 'pointer' }}>
               <div className="cert-header">
                 <h4>{item.title}</h4>
                 <span className="cert-date">{item.date}</span>
@@ -60,7 +61,7 @@ function Certifications() {
               <div className="project-tags">
                 {item.tech.map((t, i) => <span key={i} className="tag">{t}</span>)}
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
@@ -75,7 +76,7 @@ function Certifications() {
                 target="_blank" 
                 rel="noreferrer"
                 className="glass-panel cert-list-item"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <div className="cert-list-icon">
                   {cert.icon}
