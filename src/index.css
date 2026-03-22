@@ -141,7 +141,8 @@ body {
 .card-desc { color: var(--text-muted); line-height: 1.7; }
 
 /* Timeline / Experience */
-.timeline-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; }
+.timeline-container { display: flex; flex-direction: column; gap: 8rem; max-width: 900px; margin: 0 auto; }
+.timeline-column { display: flex; flex-direction: column; }
 .timeline-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
 .text-teal { color: var(--accent-2); }
 .timeline { position: relative; padding-left: 2.5rem; }
