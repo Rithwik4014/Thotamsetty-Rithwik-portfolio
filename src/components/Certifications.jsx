@@ -9,7 +9,7 @@ function Certifications() {
       desc: "Completed a summer training program in Data Structures and Algorithms, focusing on structured problem-solving, complexity analysis, and hands-on implementation of essential algorithms and data structures in C++. Gained exposure to real-world coding challenges and performance optimization.",
       tech: ["Arrays", "Linked Lists", "Stacks", "Queues", "Recursion", "Sorting & Searching"],
       link: "https://drive.google.com/file/d/1I1442AIEVTNX6ya8C0wZNJQHQnSXFZct/view",
-      image: "/certifications/dsa.png"
+      image: "/certifications/dsa.jpg"
     }
   ];
 
