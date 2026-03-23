@@ -10,7 +10,7 @@ function Experience() {
       date: "2023–Present",
       score: "CGPA: 6.79",
       icon: <GraduationCap size={24} color="white" />,
-      color: "#3b82f6" // Blue
+      color: "#06B6D4" // Cyan
     },
     {
       degree: "Intermediate",
@@ -18,7 +18,7 @@ function Experience() {
       date: "2021–2023",
       score: "69.1%",
       icon: <BookOpen size={24} color="white" />,
-      color: "#8b5cf6" // Purple
+      color: "#8B5CF6" // Purple
     },
     {
       degree: "Matriculation",
@@ -26,7 +26,7 @@ function Experience() {
       date: "2020–2021",
       score: "100%",
       icon: <Building2 size={24} color="white" />,
-      color: "#ec4899" // Pink
+      color: "#EC4899" // Pink
     }
   ];
 
@@ -61,13 +61,34 @@ function Experience() {
                 }}>
                   {item.icon}
                 </div>
-                <div className="timeline-content glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div 
+                  className="timeline-content glass-panel" 
+                  style={{ 
+                    padding: '2rem', 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '0.5rem',
+                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.borderColor = item.color;
+                    e.currentTarget.style.boxShadow = `0 10px 30px -10px ${item.color}`;
+                    e.currentTarget.style.transform = 'translateX(10px) translateY(-5px)';
+                    e.currentTarget.style.background = 'rgba(17, 24, 39, 0.9)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+                    e.currentTarget.style.transform = 'translateX(0) translateY(0)';
+                    e.currentTarget.style.background = 'var(--bg-card)';
+                  }}
+                >
                   <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap' }}>
                     <h4 style={{ fontSize: '1.25rem', marginBottom: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       {React.cloneElement(item.icon, { size: 24, color: item.color })}
                       {item.degree}
                     </h4>
-                    <span style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-light)', padding: '0.25rem 1rem', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: 500 }}>{item.date}</span>
+                    <span style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-light)', padding: '0.25rem 1rem', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: 500, border: `1px solid ${item.color}30` }}>{item.date}</span>
                   </div>
                   <p className="timeline-org" style={{ color: 'var(--accent-2)', marginBottom: '0.5rem' }}>{item.school}</p>
                   <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.95rem' }}>Score: {item.score}</p>
@@ -79,12 +100,31 @@ function Experience() {
 
         <div className="profile-details-column animate-fade-up" style={{ display: 'flex', flexDirection: 'column', gap: '3rem', animationDelay: '0.2s', flex: 1 }}>
           
-          <div className="glass-panel" style={{ padding: '2.5rem', borderRadius: '1.5rem' }}>
+          <div 
+            className="glass-panel" 
+            style={{ 
+              padding: '2.5rem', 
+              borderRadius: '1.5rem',
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = 'var(--accent-2)';
+              e.currentTarget.style.boxShadow = `0 15px 35px -10px var(--accent-2)`;
+              e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            }}
+          >
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '2rem', color: 'white' }}>Quick <span className="text-gradient">Facts</span></h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1rem', display: 'flex' }}>
-                  <MapPin size={24} color="var(--accent-1)" />
+                <div style={{ padding: '1rem', background: 'rgba(6, 182, 212, 0.1)', borderRadius: '1rem', display: 'flex', border: '1px solid rgba(6, 182, 212, 0.3)' }}>
+                  <MapPin size={24} color="var(--accent-2)" />
                 </div>
                 <div>
                   <span style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>Location</span>
@@ -92,8 +132,8 @@ function Experience() {
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1rem', display: 'flex' }}>
-                  <GraduationCap size={24} color="var(--accent-2)" />
+                <div style={{ padding: '1rem', background: 'rgba(139, 92, 246, 0.1)', borderRadius: '1rem', display: 'flex', border: '1px solid rgba(139, 92, 246, 0.3)' }}>
+                  <GraduationCap size={24} color="var(--accent-1)" />
                 </div>
                 <div>
                   <span style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>Education</span>
@@ -103,18 +143,49 @@ function Experience() {
             </div>
           </div>
 
-          <div className="glass-panel" style={{ padding: '2.5rem', borderRadius: '1.5rem' }}>
+          <div 
+            className="glass-panel" 
+            style={{ 
+              padding: '2.5rem', 
+              borderRadius: '1.5rem',
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = 'var(--accent-3)';
+              e.currentTarget.style.boxShadow = `0 15px 35px -10px var(--accent-3)`;
+              e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+              e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            }}
+          >
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '2rem', color: 'white' }}>When I'm Not <span className="text-gradient">Coding</span></h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateX(10px)'} onMouseOut={e => e.currentTarget.style.transform='translateX(0)'}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', position: 'relative', zIndex: 1 }}>
+              <div 
+                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'all 0.3s' }} 
+                onMouseOver={e => { e.currentTarget.style.transform='translateX(10px)'; e.currentTarget.style.borderColor='var(--accent-1)'; e.currentTarget.style.background='rgba(139, 92, 246, 0.1)'; }} 
+                onMouseOut={e => { e.currentTarget.style.transform='translateX(0)'; e.currentTarget.style.borderColor='var(--border-glass)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; }}
+              >
                 <Film size={24} color="var(--accent-1)" />
                 <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 500, color: 'white' }}>Watching Movies</h4>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateX(10px)'} onMouseOut={e => e.currentTarget.style.transform='translateX(0)'}>
+              <div 
+                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'all 0.3s' }} 
+                onMouseOver={e => { e.currentTarget.style.transform='translateX(10px)'; e.currentTarget.style.borderColor='var(--accent-2)'; e.currentTarget.style.background='rgba(6, 182, 212, 0.1)'; }} 
+                onMouseOut={e => { e.currentTarget.style.transform='translateX(0)'; e.currentTarget.style.borderColor='var(--border-glass)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; }}
+              >
                 <BookOpen size={24} color="var(--accent-2)" />
                 <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 500, color: 'white' }}>Reading Books</h4>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateX(10px)'} onMouseOut={e => e.currentTarget.style.transform='translateX(0)'}>
+              <div 
+                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.25rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid var(--border-glass)', transition: 'all 0.3s' }} 
+                onMouseOver={e => { e.currentTarget.style.transform='translateX(10px)'; e.currentTarget.style.borderColor='var(--accent-3)'; e.currentTarget.style.background='rgba(236, 72, 153, 0.1)'; }} 
+                onMouseOut={e => { e.currentTarget.style.transform='translateX(0)'; e.currentTarget.style.borderColor='var(--border-glass)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; }}
+              >
                 <Headphones size={24} color="var(--accent-3)" />
                 <h4 style={{ fontSize: '1.125rem', margin: 0, fontWeight: 500, color: 'white' }}>Listening Music</h4>
               </div>
