@@ -1,0 +1,11 @@
+commit 768f34dc727d1bb35d27f11e72bbd4fcc52c0e5e
+Author: Thotamsetty Rithwik <rithwikthotamsetty00@gmail.com>
+Date:   Mon Mar 23 23:42:30 2026 +0530
+
+    Update hero section style
+
+commit 6e66c263738fa136489f35ac8adcd06647c7c56c
+Author: Thotamsetty Rithwik <rithwikthotamsetty00@gmail.com>
+Date:   Mon Mar 23 20:42:22 2026 +0530
+
+    style: Update Training card layout to match Project cards

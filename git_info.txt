@@ -1,0 +1,14 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_info.txt
+	status.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+commit 768f34dc727d1bb35d27f11e72bbd4fcc52c0e5e
+Author: Thotamsetty Rithwik <rithwikthotamsetty00@gmail.com>
+Date:   Mon Mar 23 23:42:30 2026 +0530
+
+    Update hero section style
