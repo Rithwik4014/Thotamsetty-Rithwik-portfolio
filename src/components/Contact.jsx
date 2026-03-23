@@ -10,40 +10,111 @@ function Contact() {
       </p>
 
       {/* Contact Form Box matches the user's reference image */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '4rem' }}>
-        <form className="glass-panel animate-fade-up" style={{ 
-          padding: '2.5rem', 
-          borderRadius: '1.5rem',
-          width: '100%',
-          maxWidth: '500px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem',
-        }}>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '0 1rem 4rem 1rem' }}>
+        <form 
+          className="glass-panel animate-fade-up" 
+          style={{ 
+            padding: '3rem 2.5rem', 
+            borderRadius: '1.5rem',
+            width: '100%',
+            maxWidth: '550px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.75rem',
+            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            position: 'relative'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.borderColor = 'var(--accent-1)';
+            e.currentTarget.style.boxShadow = `0 15px 35px -10px var(--accent-1)`;
+            e.currentTarget.style.transform = 'translateY(-5px)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+            e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+            e.currentTarget.style.transform = 'translateY(0)';
+          }}
+        >
           <div>
-            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'white', fontWeight: 500, textAlign: 'center', fontSize: '1.1rem' }}>Name</label>
-            <input type="text" placeholder="Your name" style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: '0.5rem', border: 'none', outline: 'none', fontFamily: 'inherit', fontSize: '0.95rem', color: '#1f2937' }} />
+            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'var(--text-light)', fontWeight: 500, fontSize: '0.95rem', textAlign: 'left' }}>Full Name</label>
+            <input 
+              type="text" 
+              placeholder="John Doe" 
+              style={{ 
+                width: '100%', 
+                padding: '1rem 1.25rem', 
+                borderRadius: '0.75rem', 
+                border: '1px solid rgba(255,255,255,0.1)', 
+                background: 'rgba(255,255,255,0.03)',
+                outline: 'none', 
+                fontFamily: 'inherit', 
+                fontSize: '1rem', 
+                color: 'white',
+                transition: 'all 0.3s'
+              }} 
+              onFocus={e => {e.currentTarget.style.borderColor='var(--accent-1)'; e.currentTarget.style.background='rgba(255,255,255,0.08)'; e.currentTarget.style.boxShadow='0 0 15px rgba(6, 182, 212, 0.2)'}}
+              onBlur={e => {e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.boxShadow='none'}}
+            />
           </div>
           <div>
-            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'white', fontWeight: 500, textAlign: 'center', fontSize: '1.1rem' }}>Email</label>
-            <input type="email" placeholder="your.email@example.com" style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: '0.5rem', border: 'none', outline: 'none', fontFamily: 'inherit', fontSize: '0.95rem', color: '#1f2937' }} />
+            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'var(--text-light)', fontWeight: 500, fontSize: '0.95rem', textAlign: 'left' }}>Email Address</label>
+            <input 
+              type="email" 
+              placeholder="john@example.com" 
+              style={{ 
+                width: '100%', 
+                padding: '1rem 1.25rem', 
+                borderRadius: '0.75rem', 
+                border: '1px solid rgba(255,255,255,0.1)', 
+                background: 'rgba(255,255,255,0.03)',
+                outline: 'none', 
+                fontFamily: 'inherit', 
+                fontSize: '1rem', 
+                color: 'white',
+                transition: 'all 0.3s'
+              }} 
+              onFocus={e => {e.currentTarget.style.borderColor='var(--accent-2)'; e.currentTarget.style.background='rgba(255,255,255,0.08)'; e.currentTarget.style.boxShadow='0 0 15px rgba(139, 92, 246, 0.2)'}}
+              onBlur={e => {e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.boxShadow='none'}}
+            />
           </div>
           <div>
-            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'white', fontWeight: 500, textAlign: 'center', fontSize: '1.1rem' }}>Message</label>
-            <textarea placeholder="Your message..." rows="5" style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: '0.5rem', border: 'none', outline: 'none', fontFamily: 'inherit', fontSize: '0.95rem', resize: 'vertical', color: '#1f2937' }}></textarea>
+            <label style={{ display: 'block', marginBottom: '0.75rem', color: 'var(--text-light)', fontWeight: 500, fontSize: '0.95rem', textAlign: 'left' }}>Message</label>
+            <textarea 
+              placeholder="How can we help?" 
+              rows="4" 
+              style={{ 
+                width: '100%', 
+                padding: '1rem 1.25rem', 
+                borderRadius: '0.75rem', 
+                border: '1px solid rgba(255,255,255,0.1)', 
+                background: 'rgba(255,255,255,0.03)',
+                outline: 'none', 
+                fontFamily: 'inherit', 
+                fontSize: '1rem', 
+                resize: 'vertical', 
+                color: 'white',
+                transition: 'all 0.3s'
+              }}
+              onFocus={e => {e.currentTarget.style.borderColor='var(--accent-3)'; e.currentTarget.style.background='rgba(255,255,255,0.08)'; e.currentTarget.style.boxShadow='0 0 15px rgba(236, 72, 153, 0.2)'}}
+              onBlur={e => {e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.boxShadow='none'}}
+            ></textarea>
           </div>
           <button type="submit" style={{ 
-            marginTop: '1rem',
-            padding: '1rem', 
-            borderRadius: '0.5rem', 
-            background: '#3b82f6', 
+            marginTop: '1.5rem',
+            padding: '1.125rem', 
+            borderRadius: '0.75rem', 
+            background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%)', 
             color: 'white', 
             border: 'none', 
-            fontWeight: 600, 
-            fontSize: '1rem',
+            fontWeight: 700, 
+            fontSize: '1.1rem',
             cursor: 'pointer',
-            transition: 'background 0.3s'
-          }} onMouseOver={e => e.currentTarget.style.background = '#2563eb'} onMouseOut={e => e.currentTarget.style.background = '#3b82f6'}>
+            transition: 'all 0.3s',
+            boxShadow: '0 4px 15px rgba(6, 182, 212, 0.4)'
+          }} 
+          onMouseOver={e => {e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 25px rgba(6, 182, 212, 0.6)'}} 
+          onMouseOut={e => {e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(6, 182, 212, 0.4)'}}
+          >
             Send Message
           </button>
         </form>
