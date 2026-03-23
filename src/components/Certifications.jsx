@@ -8,7 +8,8 @@ function Certifications() {
       date: "Jul '25",
       desc: "Completed a summer training program in Data Structures and Algorithms, focusing on structured problem-solving, complexity analysis, and hands-on implementation of essential algorithms and data structures in C++. Gained exposure to real-world coding challenges and performance optimization.",
       tech: ["Arrays", "Linked Lists", "Stacks", "Queues", "Recursion", "Sorting & Searching"],
-      link: "https://drive.google.com/file/d/1I1442AIEVTNX6ya8C0wZNJQHQnSXFZct/view"
+      link: "https://drive.google.com/file/d/1I1442AIEVTNX6ya8C0wZNJQHQnSXFZct/view",
+      image: "/certifications/dsa.png"
     }
   ];
 
@@ -58,6 +59,11 @@ function Certifications() {
                 <span className="cert-date">{item.date}</span>
               </div>
               <p className="cert-desc">{item.desc}</p>
+              {item.image && (
+                <div style={{ marginBottom: '2rem', borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid var(--border-glass)' }}>
+                  <img src={item.image} alt={item.title} style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s' }} onMouseOver={e=>e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e=>e.currentTarget.style.transform='scale(1)'} />
+                </div>
+              )}
               <div className="project-tags">
                 {item.tech.map((t, i) => <span key={i} className="tag">{t}</span>)}
               </div>
