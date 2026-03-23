@@ -51,6 +51,7 @@ function Projects() {
                 <h3>{project.title}</h3>
                 <div className="project-links">
                   {project.github && <a href={project.github} target="_blank" rel="noreferrer"><Github size={20} /></a>}
+                  {project.demo && <a href={project.demo} target="_blank" rel="noreferrer"><ExternalLink size={20} /></a>}
                 </div>
               </div>
               <span className="project-date">{project.date}</span>
