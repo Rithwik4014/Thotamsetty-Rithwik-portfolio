@@ -53,19 +53,23 @@ function Certifications() {
         <div className="training-column animate-fade-up">
           <h3 className="skill-cat-title"><BookOpen size={24} className="text-teal" style={{marginRight: '0.75rem', color: 'var(--accent-2)'}}/> Training Programs</h3>
           {training.map((item, idx) => (
-            <a key={idx} href={item.link} target="_blank" rel="noreferrer" className="glass-panel cert-card" style={{ textDecoration: 'none', display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="cert-header">
-                <h4>{item.title}</h4>
-                <span className="cert-date">{item.date}</span>
-              </div>
-              <p className="cert-desc">{item.desc}</p>
+            <a key={idx} href={item.link} target="_blank" rel="noreferrer" className="glass-panel cert-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden', color: 'inherit', cursor: 'pointer' }}>
+              
               {item.image && (
-                <div style={{ marginBottom: '2rem', borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid var(--border-glass)' }}>
-                  <img src={item.image} alt={item.title} style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s' }} onMouseOver={e=>e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e=>e.currentTarget.style.transform='scale(1)'} />
+                <div style={{ overflow: 'hidden', width: '100%', height: '240px', borderBottom: '1px solid var(--border-glass)' }}>
+                  <img src={item.image} alt={item.title} className="project-image" />
                 </div>
               )}
-              <div className="project-tags">
-                {item.tech.map((t, i) => <span key={i} className="tag">{t}</span>)}
+
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <div className="cert-header">
+                  <h4>{item.title}</h4>
+                  <span className="cert-date">{item.date}</span>
+                </div>
+                <p className="cert-desc">{item.desc}</p>
+                <div className="project-tags">
+                  {item.tech.map((t, i) => <span key={i} className="tag">{t}</span>)}
+                </div>
               </div>
             </a>
           ))}
