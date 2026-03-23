@@ -5,17 +5,30 @@ function Achievements() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   
+  const fallbackStats = {
+    status: 'success',
+    totalSolved: 112,
+    easySolved: 34,
+    mediumSolved: 63,
+    hardSolved: 15,
+    acceptanceRate: 86.71,
+    ranking: 1341295
+  };
+
   useEffect(() => {
     fetch('https://leetcode-stats-api.herokuapp.com/Rithwik4014')
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {
           setStats(data);
+        } else {
+          setStats(fallbackStats);
         }
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        console.error('LeetCode API failed, using fallback:', err);
+        setStats(fallbackStats);
         setLoading(false);
       });
   }, []);
@@ -23,7 +36,7 @@ function Achievements() {
   return (
     <section id="achievements" className="section">
       <h2 className="section-title">My <span className="text-gradient">Achievements</span></h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', maxWidth: '900px', margin: '0 auto' }}>
         
         {/* LeetCode Card */}
         <div className="glass-panel animate-fade-up" style={{ padding: '3rem', borderRadius: '1.5rem', position: 'relative', overflow: 'hidden' }}>
@@ -81,9 +94,7 @@ function Achievements() {
               </div>
 
             </div>
-          ) : (
-            <p style={{ color: 'var(--text-muted)', textAlign: 'center' }}>Unable to load LeetCode stats.</p>
-          )}
+          ) : null}
         </div>
 
         {/* GeeksForGeeks Card */}
