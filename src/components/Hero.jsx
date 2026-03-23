@@ -3,7 +3,7 @@ import { Download, ArrowDown, Mail, Sparkles, Github, Linkedin } from 'lucide-re
 
 function Hero() {
   return (
-    <section className="hero animate-fade-up" style={{ animationDelay: '0.2s' }}>
+    <section id="home" className="hero animate-fade-up" style={{ animationDelay: '0.2s' }}>
       <div className="hero-content">
         <div className="status-badge glass-panel" style={{ border: '1px solid rgba(74, 222, 128, 0.2)', backgroundColor: 'rgba(74, 222, 128, 0.05)', color: '#4ade80', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           <div style={{ width: '8px', height: '8px', backgroundColor: '#4ade80', borderRadius: '50%', boxShadow: '0 0 10px #4ade80' }}></div>

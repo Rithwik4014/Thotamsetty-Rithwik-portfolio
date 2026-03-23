@@ -6,6 +6,7 @@ function Navbar() {
       <div className="navbar-container">
         <a href="#" className="nav-logo">T. Rithwik</a>
         <div className="nav-links">
+          <a href="#home" className="nav-link">Home</a>
           <a href="#about" className="nav-link">About</a>
           <a href="#skills" className="nav-link">Skills</a>
           <a href="#projects" className="nav-link">Projects</a>
