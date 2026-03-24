@@ -35,7 +35,7 @@ function Achievements() {
 
   return (
     <section id="achievements" className="section">
-      <h2 className="section-title">My <span className="text-gradient">Achievements</span></h2>
+      <h2 className="section-title"><span className="text-gradient">Platform Stats</span></h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', maxWidth: '900px', margin: '0 auto' }}>
         
         {/* LeetCode Card */}

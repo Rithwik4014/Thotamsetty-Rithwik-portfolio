@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Download, ArrowDown, Mail, Sparkles, Github, Linkedin } from 'lucide-react';
 
 function Hero() {
+  const [isGlowing, setIsGlowing] = useState(false);
+
   return (
     <section id="home" className="hero animate-fade-up" style={{ animationDelay: '0.2s' }}>
       <div className="hero-container">
@@ -40,7 +42,11 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-image-wrapper">
+        <div 
+          className={`hero-image-wrapper ${isGlowing ? 'glow-active' : ''}`}
+          onClick={() => setIsGlowing(!isGlowing)}
+          style={{ cursor: 'pointer' }}
+        >
           <img src="/profile.jpg" alt="Profile" className="hero-image" />
         </div>
       </div>

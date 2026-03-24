@@ -35,7 +35,7 @@ function Skills() {
 
   return (
     <section id="skills" className="section">
-      <h2 className="section-title">Technical <span className="text-gradient">Skills</span></h2>
+      <h2 className="section-title"><span className="text-gradient">Skills</span></h2>
       <div className="skills-grid">
         {skillCategories.map((cat, idx) => (
           <div 
