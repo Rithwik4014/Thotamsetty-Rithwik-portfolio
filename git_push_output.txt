@@ -1,0 +1,4 @@
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/Rithwik4014/Thotamsetty-Rithwik-portfolio.git        
+To https://github.com/Rithwik4014/portfolio-live.git
+   d71a751..52254e2  main -> main

@@ -43,9 +43,13 @@ function Hero() {
         </div>
 
         <div 
-          className={`hero-image-wrapper ${isGlowing ? 'glow-active' : ''}`}
+          className="hero-image-wrapper"
           onClick={() => setIsGlowing(!isGlowing)}
-          style={{ cursor: 'pointer' }}
+          style={{ 
+            cursor: 'pointer',
+            boxShadow: isGlowing ? '0 0 35px rgba(250, 204, 21, 0.7)' : 'none',
+            transition: 'box-shadow 0.3s ease'
+          }}
         >
           <img src="/profile.jpg" alt="Profile" className="hero-image" />
         </div>
