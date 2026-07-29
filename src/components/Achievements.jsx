@@ -6,21 +6,31 @@ function Achievements() {
   const [loading, setLoading] = useState(true);
   
   const fallbackStats = {
-    status: 'success',
-    totalSolved: 112,
-    easySolved: 34,
-    mediumSolved: 63,
+    totalSolved: 131,
+    easySolved: 41,
+    mediumSolved: 75,
     hardSolved: 15,
-    acceptanceRate: 86.71,
-    ranking: 1341295
+    acceptanceRate: 88.89,
+    ranking: 1279792
   };
 
   useEffect(() => {
-    fetch('https://leetcode-stats-api.herokuapp.com/Rithwik4014')
+    fetch('https://leetcode-api-faisalshohag.vercel.app/Rithwik4014')
       .then(res => res.json())
       .then(data => {
-        if (data.status === 'success') {
-          setStats(data);
+        if (data && data.totalSolved !== undefined) {
+          const acSubs = data.matchedUserStats?.acSubmissionNum?.[0]?.submissions;
+          const totalSubs = data.matchedUserStats?.totalSubmissionNum?.[0]?.submissions;
+          const accRate = (acSubs && totalSubs) ? ((acSubs / totalSubs) * 100).toFixed(2) : 88.89;
+          
+          setStats({
+            totalSolved: data.totalSolved,
+            easySolved: data.easySolved,
+            mediumSolved: data.mediumSolved,
+            hardSolved: data.hardSolved,
+            acceptanceRate: accRate,
+            ranking: data.ranking
+          });
         } else {
           setStats(fallbackStats);
         }
