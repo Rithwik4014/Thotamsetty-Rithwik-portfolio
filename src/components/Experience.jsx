@@ -8,7 +8,7 @@ function Experience() {
       degree: "B.Tech (CSE)",
       school: "Lovely Professional University",
       date: "2023–Present",
-      score: "CGPA: 6.79",
+      score: "CGPA: 7.15",
       icon: <GraduationCap size={24} color="white" />,
       color: "#06B6D4" // Cyan
     },
